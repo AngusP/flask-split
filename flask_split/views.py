@@ -25,12 +25,6 @@ split = Blueprint('split', 'flask.ext.split',
 )
 
 
-@split.context_processor
-def inject_version():
-    from . import __version__
-    return dict(version=__version__)
-
-
 @split.route('/')
 def index():
     """Render a dashboard that lists all active experiments."""
